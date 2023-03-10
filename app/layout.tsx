@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Header from "./Header";
+import Header from "../components/Header/Header";
 
 export const metadata = {
   title: "News",
@@ -11,11 +11,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // dark: bg - zinc - 900;
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-100  transition-all duration-700 ">
         <Header />
-        <div>{children}</div>
+        <div className="max-w-6xl mx-auto">{children}</div>
       </body>
     </html>
   );

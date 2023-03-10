@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { CATEGORIES } from "../constants";
+import { CATEGORIES } from "../../constants";
 import NavLinkItem from "./NavLinkItem";
 
 const NavLinks = () => {
