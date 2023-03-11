@@ -1,17 +1,14 @@
 import axios from "axios";
+import { sortNewsByImg } from "./sortNewsByImg";
 
-const { API_KEY, BASE_URL } = process.env;
+const { BASE_URL } = process.env;
 
-axios.defaults.baseURL = `${BASE_URL}${API_KEY}`;
-
-export const fetchNews = async (
-  category?: Category | string,
-  keywords?: string,
-  isDynamic?: boolean
-) => {
+export const fetchNews = async (): Promise<NewsResponse | undefined> => {
   try {
-    const data = await axios.get(category);
-  } catch (error) {
-    console.log(error);
+    const res = await axios.get(`${BASE_URL}`);
+    const data = sortNewsByImg(res.data);
+    return data;
+  } catch (err) {
+    console.log(err);
   }
 };
