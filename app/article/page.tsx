@@ -46,7 +46,7 @@ const ArticlePage = ({ searchParams }: Props) => {
   //     </section>
   //   );
 
-  return <div>ARTICLE!!!</div>;
+  return <div>{Object.entries(searchParams!).length}!!!</div>;
 };
 
 export default ArticlePage;
