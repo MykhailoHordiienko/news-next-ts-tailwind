@@ -1,5 +1,7 @@
 import React from "react";
 import ReadMoreButton from "./ReadMoreButton";
+import defaultImg from "../../public/defaultImg.jpeg";
+import Image from "next/image";
 
 type Props = {
   article: DataEntry;
@@ -20,11 +22,18 @@ const ArticleNews = ({ article }: Props) => {
   } = article;
   return (
     <article className="bg-slate-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-sm hover:scale-105 hover:shadow-lg hover:bg-slate-200 transition-all duration-300 ease-out">
-      {image && (
+      {!image ? (
+        <Image
+          className="w-full object-cover rounded-t-lg shadow-md h-56"
+          alt="image"
+          src={defaultImg}
+        />
+      ) : (
         <img
           src={image}
           alt={title}
-          className="w-full object-cover rounded-t-lg shadow-md h-56"></img>
+          className="w-full object-cover rounded-t-lg shadow-md h-56"
+        />
       )}
       <div className="flex flex-1 flex-col">
         <div className="flex flex-1 flex-col p-5">

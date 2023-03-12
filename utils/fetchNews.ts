@@ -3,7 +3,7 @@ import { sortNewsByImg } from "./sortNewsByImg";
 
 const { BASE_URL } = process.env;
 
-export const fetchNews = async (): Promise<NewsResponse | undefined> => {
+export const fetchNews = async () => {
   try {
     const res = await axios.get(`${BASE_URL}`);
     const data = sortNewsByImg(res.data);
