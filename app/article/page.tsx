@@ -1,3 +1,4 @@
+"use client";
 import { notFound } from "next/navigation";
 import defaultImg from "../../public/defaultImg.jpeg";
 import Image from "next/image";
@@ -50,3 +51,9 @@ const ArticlePage = ({ searchParams }: Props) => {
 };
 
 export default ArticlePage;
+
+// export async function getServerSideProps(context) {
+//   return {
+//     props: { searchParams }, // will be passed to the page component as props
+//   };
+// }
