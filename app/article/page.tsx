@@ -1,4 +1,3 @@
-"use client";
 import { notFound } from "next/navigation";
 import defaultImg from "../../public/defaultImg.jpeg";
 import Image from "next/image";
@@ -7,7 +6,7 @@ type Props = {
   searchParams?: DataEntry;
 };
 
-const ArticlePage = ({ searchParams }: Props) => {
+function ArticlePage({ searchParams }: Props) {
   console.log(searchParams);
   //   if (
   //     (searchParams && Object.entries(searchParams).length) === 0 ||
@@ -49,7 +48,7 @@ const ArticlePage = ({ searchParams }: Props) => {
   //   );
 
   return <div>{Object.entries(searchParams!).length}!!!</div>;
-};
+}
 
 export default ArticlePage;
 
