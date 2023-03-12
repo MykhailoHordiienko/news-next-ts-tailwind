@@ -8,6 +8,7 @@ type Props = {
 };
 
 const ArticlePage = ({ searchParams }: Props) => {
+  console.log(searchParams);
   //   if (
   //     (searchParams && Object.entries(searchParams).length) === 0 ||
   //     !searchParams
