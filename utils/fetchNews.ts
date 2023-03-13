@@ -1,7 +1,7 @@
 import axios from "axios";
 import { sortNewsByImg } from "./sortNewsByImg";
 
-const { BASE_URL } = process.env;
+const { BASE_URL = "http://api.mediastack.com/v1/" } = process.env;
 
 export const fetchNews = async () => {
   try {
