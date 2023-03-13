@@ -9,6 +9,7 @@ const NewsCategoryPage = async ({ params: { category } }: Props) => {
   const news = await fetchNews("categories", category.toLowerCase());
   return (
     <>
+      <h1 className="headerTitle text-center">{category}</h1>
       <NewsList news={news!} />
     </>
   );
