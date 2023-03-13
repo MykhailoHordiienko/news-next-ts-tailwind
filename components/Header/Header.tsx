@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import NavLinks from "./NavLinks";
@@ -8,10 +9,19 @@ import DarkModeButton from "./DarkModeButton";
 type Props = {};
 
 const Header = (props: Props) => {
+  const [showCategory, setShowCategory] = useState(true);
+
+  const handleClick = () => {
+    setShowCategory(!showCategory);
+  };
+
   return (
-    <header>
+    <header className="border-b">
       <div className="grid grid-cols-3 p-10 items-center">
-        <Bars3Icon className="h-8 w-8 cursor-pointer" />
+        <Bars3Icon
+          className="h-8 w-8 cursor-pointer"
+          onClick={handleClick}
+        />
         <Link
           href="/"
           prefetch={false}>
@@ -27,7 +37,7 @@ const Header = (props: Props) => {
           <DarkModeButton />
         </div>
       </div>
-      <NavLinks />
+      {showCategory && <NavLinks />}
       <SearchBox />
     </header>
   );
