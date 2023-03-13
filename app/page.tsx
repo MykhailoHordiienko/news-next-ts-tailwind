@@ -7,7 +7,10 @@ import { fetchNews } from "../utils/fetchNews";
 type Props = {};
 
 const Homepage = async (props: Props) => {
-  const news = await fetchNews();
+  const news = await fetchNews(
+    "categories",
+    CATEGORIES.join(",").toLowerCase()
+  );
 
   return (
     <>

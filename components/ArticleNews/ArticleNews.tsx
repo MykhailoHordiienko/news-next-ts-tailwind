@@ -8,18 +8,7 @@ type Props = {
 };
 
 const ArticleNews = ({ article }: Props) => {
-  const {
-    author,
-    category,
-    country,
-    description,
-    image,
-    title,
-    language,
-    published_at,
-    source,
-    url,
-  } = article;
+  const { description, image, title, published_at, source } = article;
   return (
     <article className="bg-slate-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-sm hover:scale-105 hover:shadow-lg hover:bg-slate-200 transition-all duration-300 ease-out">
       {!image ? (

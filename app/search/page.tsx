@@ -5,9 +5,13 @@ type Props = {
   searchParams: { term: string };
 };
 
-const SearchPage = ({ searchParams }: Props) => {
-  console.log(searchParams);
-  return <div>{SearchPage.length}</div>;
+const SearchPage = async ({ searchParams }: Props) => {
+  const news = await fetchNews("keywords", searchParams.term);
+  return (
+    <div>
+      <NewsList news={news!} />
+    </div>
+  );
 };
 
 export default SearchPage;

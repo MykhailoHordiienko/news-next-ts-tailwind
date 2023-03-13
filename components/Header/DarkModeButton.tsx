@@ -21,15 +21,21 @@ const DarkModeButton = (props: Props) => {
   return (
     <div>
       {currentTheme === "dark" ? (
-        <SunIcon
-          className="h-8 w-8 cursor-pointer text-yellow-400"
-          onClick={() => setTheme("light")}
-        />
+        <div className="flex justify-end items-center space-x-2">
+          <p>Turn Light</p>
+          <SunIcon
+            className="h-8 w-8 cursor-pointer text-yellow-400"
+            onClick={() => setTheme("light")}
+          />
+        </div>
       ) : (
-        <MoonIcon
-          className="h-8 w-8 cursor-pointer text-gray-900"
-          onClick={() => setTheme("dark")}
-        />
+        <div className="flex justify-end items-center space-x-2">
+          <p>Turn Dark</p>
+          <MoonIcon
+            className="h-8 w-8 cursor-pointer text-gray-900"
+            onClick={() => setTheme("dark")}
+          />{" "}
+        </div>
       )}
     </div>
   );

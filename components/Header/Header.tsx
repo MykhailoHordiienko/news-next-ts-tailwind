@@ -23,11 +23,8 @@ const Header = (props: Props) => {
             News
           </h1>
         </Link>
-        <div className="flex justify-end items-center space-x-2">
+        <div>
           <DarkModeButton />
-          <button className="hidden md:inline bg-slate-900 text-white px-4 lg:px-8 py-2 lg:py-4 rounded-full dark:bg-slate-800">
-            Subscribe
-          </button>
         </div>
       </div>
       <NavLinks />
