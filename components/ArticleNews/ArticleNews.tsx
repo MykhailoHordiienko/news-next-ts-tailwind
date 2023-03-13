@@ -2,6 +2,7 @@ import React from "react";
 import ReadMoreButton from "./ReadMoreButton";
 import defaultImg from "../../public/defaultImg.jpeg";
 import Image from "next/image";
+import LiveTimeAgo from "../LiveTimeAgo/LiveTimeAgo";
 
 type Props = {
   article: DataEntry;
@@ -9,6 +10,9 @@ type Props = {
 
 const ArticleNews = ({ article }: Props) => {
   const { description, image, title, published_at, source } = article;
+
+  const liveTime = new Date(published_at).getTime();
+
   return (
     <article className="bg-slate-100 dark:bg-slate-800 flex flex-col rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-slate-200 transition-all duration-300 ease-out">
       {!image ? (
@@ -32,7 +36,9 @@ const ArticleNews = ({ article }: Props) => {
           </div>
           <div className="text-xs text-right ml-auto flex space-x-1 pt-5 text-gray-400 italic">
             <p>{source} -</p>
-            <p>{published_at}</p>
+            <p>
+              <LiveTimeAgo time={liveTime} />
+            </p>
           </div>
         </div>
       </div>
