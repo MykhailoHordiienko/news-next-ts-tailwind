@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import NavLinks from "./NavLinks";
@@ -10,6 +10,11 @@ type Props = {};
 
 const Header = (props: Props) => {
   const [showCategory, setShowCategory] = useState(true);
+
+  useEffect(() => {
+    const clientWidth = document.documentElement.clientWidth;
+    clientWidth > 800 ? setShowCategory(true) : setShowCategory(false);
+  }, []);
 
   const handleClick = () => {
     setShowCategory(!showCategory);
