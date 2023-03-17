@@ -1,5 +1,6 @@
 import { fetchNews } from "../../../utils/fetchNews";
 import NewsList from "../../../components/NewsList/NewsList";
+import ErrorPage from "../../../components/ErrorPage/ErrorPage";
 
 type Props = {
   params: { category: Category };
@@ -8,7 +9,7 @@ type Props = {
 const NewsCategoryPage = async ({ params: { category } }: Props) => {
   const news = await fetchNews("categories", category.toLowerCase());
   if (!news) {
-    return;
+    return <ErrorPage />;
   }
   return (
     <>
